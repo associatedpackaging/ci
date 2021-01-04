@@ -8,7 +8,7 @@ echo "# Installing yarn..."
 yarn install
 
 # Install ESLint if needed
-if ! yarn list | grep "eslint"; then
+if ! yarn list | grep "eslint@"; then
   echo "\n# Installing ESLint..."
   yarn add --non-interactive --silent --dev eslint --loglevel error
 fi

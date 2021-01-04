@@ -8,6 +8,7 @@ if [ -f "Gemfile" ]; then
   echo "# Bundling..."
   gem install bundler
   gem sources -a https://"${WORKAREA_GEMSERVER_USERNAME}":"${WORKAREA_GEMSERVER_PASSWORD}"@gems.weblinc.com
+  bundle config set --global gems.weblinc.com "${WORKAREA_GEMSERVER_USERNAME}":"${WORKAREA_GEMSERVER_PASSWORD}"
   bundle install --jobs 4 --retry 3
 fi
 

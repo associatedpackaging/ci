@@ -6,6 +6,7 @@ cd $GITHUB_WORKSPACE
 
 if [ -f "Gemfile" ]; then
   echo "# Bundling..."
+  gem install bundler
   bundle install --jobs 4 --retry 3
 fi
 

@@ -15,7 +15,7 @@ fi
 # Setup bundler-audit if needed
 if [ ! `which bundler-audit` ]; then
   echo "\n# Installing bundler-audit..."
-  gem install bundler-audit
+  gem install bundler-audit --version "=0.8.0.rc1"
 fi
 
 echo "\n# Running bundler-audit..."

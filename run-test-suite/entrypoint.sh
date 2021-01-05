@@ -16,7 +16,7 @@ if [ -f "Gemfile" ]; then
   bundle config path vendor/bundle
   bundle install --jobs 4 --retry 3
   yarn install
-  bundle exec rake workarea:services:up
+  bundle exec rake workarea:services:up &
   timeout 300 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:9200)" != "200" ]]; do sleep 1; done' || false
 fi
 

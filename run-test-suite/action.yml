@@ -1,0 +1,10 @@
+name: 'Run Automated Test Suite'
+description: 'Runs test suite.'
+inputs:
+  args:
+    description: 'Arguments to pass to task'
+    default: 'workarea:test'
+author: 'Alexey Avdeev'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

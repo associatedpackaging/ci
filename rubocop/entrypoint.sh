@@ -15,7 +15,7 @@ fi
 # Setup Rubocop if needed
 if [ ! `which rubocop` ]; then
   echo "\n# Installing rubocop..."
-  gem install rubocop
+  gem install rubocop workarea-ci
 fi
 
 if [ -z "$1" ]; then

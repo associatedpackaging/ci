@@ -26,9 +26,6 @@ function run() {
             if (testSuite) {
                 command.push(testSuite);
             }
-            execSync("curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -", { stdio: 'inherit' });
-            execSync("echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | sudo tee /etc/apt/sources.list.d/yarn.list", { stdio: 'inherit' });
-            execSync("sudo apt update && sudo apt install -y -qq yarn", { stdio: 'inherit' });
             execSync("gem install bundler", { stdio: 'inherit' });
             execSync("bundle install --jobs 4 --retry 3", { stdio: 'inherit' });
             execSync("yarn install", { stdio: 'inherit' });
@@ -41,4 +38,21 @@ function run() {
         }
     });
 }
-run();
+
+function run() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            execSync("bundle exec rake workarea:services:down", { stdio: 'inherit' });
+        }
+        catch (error) {
+            core.setFailed(error);
+        }
+    });
+}
+
+
+if (!!process.env['STATE_isPost']) {
+  cleanup();  
+} else {
+  run();
+}

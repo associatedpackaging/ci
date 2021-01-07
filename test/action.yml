@@ -1,9 +1,9 @@
 name: 'Run Workarea Tests'
 description: 'Sets up and runs tests for Workarea projects'
 inputs:
-  command:
-    description: 'Command to run tests'
-    default: 'bin/rails test'
+  test:
+    description: 'Test suite to run'
+    default: ''
 author: 'Ben Crouse'
 runs:
   using: 'node12'

@@ -39,7 +39,7 @@ function run() {
     });
 }
 
-function run() {
+function cleanup() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             execSync("bundle exec rake workarea:services:down", { stdio: 'inherit' });

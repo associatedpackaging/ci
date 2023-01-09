@@ -14,6 +14,7 @@ fi
 # Setup Rubocop if needed
 if [ ! `which rubocop` ]; then
   echo "\n# Installing rubocop..."
+  gem install css_parser --version "1.12.0"
   gem install rubocop --version "~>0.58.0"
   gem install premailer --version "=1.15.0"
   gem install workarea-ci --version "=3.4.14"
